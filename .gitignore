@@ -1,0 +1,10 @@
+runtime/dll
+runtime/exe
+__pycache__
+log/
+workdir/
+*.yuv
+*.y4m
+*.wav
+origin_videos/
+distorted_videos/
