@@ -16,9 +16,14 @@ class QoECalculator:
 
     JITTER_MAX_MS = 150.0
 
-    def __init__(self, telemetry_path: Path) -> None:
-        self.telemetry_path = telemetry_path
-        self.run_path = telemetry_path.parent / "run.json"
+    def __init__(self, output_dir: Path) -> None:
+        if not output_dir.is_dir():
+            raise NotADirectoryError(
+                f"emulator output directory not found: {output_dir}"
+            )
+        self.output_dir = output_dir
+        self.telemetry_path = output_dir / "telemetry.json"
+        self.run_path = output_dir / "run.json"
 
     def calculate(self) -> dict[str, float]:
         telemetry = self._read_json(self.telemetry_path)
@@ -119,7 +124,7 @@ class QoECalculator:
             )
         path = Path(value)
         if not path.is_absolute():
-            path = self.run_path.parent / path
+            path = self.output_dir / path
         if not path.is_file():
             raise FileNotFoundError(f"{key} file not found: {path}")
         return path
@@ -193,16 +198,16 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
         description="Print QoE and its component scores as JSON."
     )
     parser.add_argument(
-        "telemetry",
+        "output_dir",
         type=Path,
-        help="telemetry.json; run.json must be in the same directory",
+        help="emulator output directory containing telemetry.json and run.json",
     )
     return parser.parse_args(argv)
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
     args = parse_args(argv)
-    print(json.dumps(QoECalculator(args.telemetry).calculate(), indent=2))
+    print(json.dumps(QoECalculator(args.output_dir).calculate(), indent=2))
     return 0
 
 
