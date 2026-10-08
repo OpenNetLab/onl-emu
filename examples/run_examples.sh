@@ -5,7 +5,7 @@
 set -u
 
 project_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
-examples_dir="$project_root/examples"
+output_root="${OUTPUT_ROOT:-$project_root/results/example-runs}"
 workdir="$project_root/workdir"
 media="$project_root/benchmark/media/Gameplay.mp4"
 trace="$project_root/benchmark/traces/fcc_wried/251_HIGH_STABLE.json"
@@ -50,34 +50,48 @@ check_workdir() {
 }
 
 normalize_run_metadata() {
-    local model="$1"
-    python3 - "$examples_dir/$model/run.json" "$model" <<'PY'
+    local output_dir="$1"
+    python3 - \
+        "$output_dir/run.json" \
+        "$project_root" \
+        "$trace" \
+        "$media" \
+        "$output_dir" \
+        "$workdir" <<'PY'
 import json
+import os
 import sys
 from pathlib import Path
 
 run_path = Path(sys.argv[1])
-model = sys.argv[2]
+project_root = Path(sys.argv[2])
+trace = Path(sys.argv[3])
+media = Path(sys.argv[4])
+output_dir = Path(sys.argv[5])
+workdir = Path(sys.argv[6])
 run = json.loads(run_path.read_text(encoding="utf-8"))
-run["trace"] = "../../benchmark/traces/fcc_wried/251_HIGH_STABLE.json"
-run["media"] = "../../benchmark/media/Gameplay.mp4"
-run["output_dir"] = f"examples/{model}"
-run["workdir"] = "workdir"
+run["trace"] = os.path.relpath(trace, output_dir)
+run["media"] = os.path.relpath(media, output_dir)
+run["output_dir"] = os.path.relpath(output_dir, project_root)
+run["workdir"] = os.path.relpath(workdir, project_root)
 run_path.write_text(json.dumps(run, indent=2) + "\n", encoding="utf-8")
 PY
 }
 
 calculate_qoe() {
-    local model="$1"
-    local output_dir="$examples_dir/$model"
+    local output_dir="$1"
     local temporary="$output_dir/qoe.json.tmp"
-    python3 "$project_root/benchmark/calculate_qoe.py" \
-        "$output_dir" >"$temporary" &&
+    if python3 "$project_root/benchmark/calculate_qoe.py" \
+        "$output_dir" >"$temporary"; then
         mv -- "$temporary" "$output_dir/qoe.json"
+    else
+        rm -f -- "$temporary"
+        return 1
+    fi
 }
 
 for model in "${models[@]}"; do
-    output_dir="$examples_dir/$model"
+    output_dir="$output_root/$model"
     if [[ -d "$output_dir" ]] &&
         find "$output_dir" -mindepth 1 -print -quit | grep -q .; then
         echo "refusing to overwrite non-empty output: $output_dir" >&2
@@ -89,7 +103,7 @@ check_workdir
 
 cd -- "$project_root"
 for model in "${models[@]}"; do
-    output_dir="$examples_dir/$model"
+    output_dir="$output_root/$model"
     echo "Running $model example"
     python3 -m emulator_call \
         --trace "$trace" \
@@ -108,8 +122,8 @@ for model in "${models[@]}"; do
         echo "$model example failed with exit code $run_status" >&2
         exit "$run_status"
     fi
-    normalize_run_metadata "$model"
-    calculate_qoe "$model" || {
+    normalize_run_metadata "$output_dir"
+    calculate_qoe "$output_dir" || {
         echo "failed to calculate QoE for $model" >&2
         exit 1
     }

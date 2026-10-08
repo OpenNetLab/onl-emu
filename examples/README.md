@@ -18,7 +18,13 @@ Each result directory contains the emulator logs, telemetry, and a derived
 `run.json` are rewritten as repository-relative paths after the run so the
 archived examples remain portable.
 
-## Reproduce
+| Model | QoE |
+| --- | ---: |
+| GCC | 81.644 |
+| Gemini | 52.657 |
+| HRCC | 59.032 |
+
+## Run the Example
 
 Run from any directory:
 
@@ -26,10 +32,18 @@ Run from any directory:
 ./examples/run_examples.sh
 ```
 
+New results are written to the ignored `results/example-runs/` directory, so
+the archived reference outputs under `examples/` remain unchanged. Set
+`OUTPUT_ROOT` to use a different output location:
+
+```bash
+OUTPUT_ROOT=/tmp/onl-examples ./examples/run_examples.sh
+```
+
 The script refuses to overwrite non-empty result directories. It runs the
 models sequentially because all cases share the loopback `tc` configuration.
 After each case, it waits five seconds and verifies that the temporary workdir
-is unmounted and empty or removed. Pass model names to reproduce only a subset:
+is unmounted and empty or removed. Pass model names to run only a subset:
 
 ```bash
 ./examples/run_examples.sh hrcc
