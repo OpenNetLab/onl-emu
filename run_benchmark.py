@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, Optional, Sequence
@@ -18,6 +19,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 DEFAULT_BENCHMARK_DIR = PROJECT_ROOT / "benchmark"
 DEFAULT_RESULTS_DIR = PROJECT_ROOT / "results"
 DEFAULT_WORKDIR = PROJECT_ROOT / "workdir"
+CASE_COOLDOWN_SECONDS = 5
 TRACE_CATEGORIES = (
     "HIGH_DYNAMIC",
     "HIGH_STABLE",
@@ -47,6 +49,10 @@ class BenchmarkCase:
             f"{self.model}/{self.media.stem}/{self.dataset}/"
             f"{self.trace.stem}"
         )
+
+
+class WorkdirStateError(RuntimeError):
+    pass
 
 
 def positive_int(value: str) -> int:
@@ -174,6 +180,33 @@ def successful_result(output_dir: Path) -> bool:
     return run.get("status") == "success"
 
 
+def ensure_workdir_clean(workdir: Path) -> None:
+    if not workdir.exists():
+        return
+    if not workdir.is_dir():
+        raise WorkdirStateError(f"workdir is not a directory: {workdir}")
+    if workdir.is_mount():
+        raise WorkdirStateError(f"workdir is still mounted: {workdir}")
+    leftovers = sorted(path.name for path in workdir.iterdir())
+    if leftovers:
+        preview = ", ".join(leftovers[:5])
+        if len(leftovers) > 5:
+            preview += f", and {len(leftovers) - 5} more"
+        raise WorkdirStateError(
+            f"workdir contains residual files: {workdir}: {preview}"
+        )
+
+
+def cool_down_and_check_workdir(workdir: Path) -> None:
+    print(
+        f"Cooling down for {CASE_COOLDOWN_SECONDS} seconds before checking "
+        "the workdir",
+        flush=True,
+    )
+    time.sleep(CASE_COOLDOWN_SECONDS)
+    ensure_workdir_clean(workdir)
+
+
 def run_cases(
     cases: Sequence[BenchmarkCase],
     duration: int,
@@ -195,13 +228,36 @@ def run_cases(
                 skipped += 1
                 print(f"{prefix}: skipped (already successful)")
                 continue
+            ensure_workdir_clean(workdir)
             if case.output_dir.exists() and any(case.output_dir.iterdir()):
                 raise RuntimeError(
                     "output directory is not empty; move or remove the "
                     f"existing result before retrying: {case.output_dir}"
                 )
+        except WorkdirStateError as error:
+            failed += 1
+            print(
+                f"{prefix}: failed before start: "
+                f"{type(error).__name__}: {error}",
+                file=sys.stderr,
+                flush=True,
+            )
+            break
+        except Exception as error:
+            failed += 1
+            print(
+                f"{prefix}: failed before start: "
+                f"{type(error).__name__}: {error}",
+                file=sys.stderr,
+                flush=True,
+            )
+            if fail_fast:
+                break
+            continue
 
-            print(f"{prefix}: running", flush=True)
+        print(f"{prefix}: running", flush=True)
+        run_error: Optional[Exception] = None
+        try:
             runner(
                 trace=case.trace,
                 media=case.media,
@@ -210,17 +266,43 @@ def run_cases(
                 workdir=workdir,
                 model=case.model,
             )
-            succeeded += 1
-            print(f"{prefix}: success")
         except Exception as error:
+            run_error = error
+
+        try:
+            cool_down_and_check_workdir(workdir)
+        except Exception as cleanup_error:
+            failed += 1
+            if run_error is not None:
+                print(
+                    f"{prefix}: run failed: "
+                    f"{type(run_error).__name__}: {run_error}",
+                    file=sys.stderr,
+                    flush=True,
+                )
+            print(
+                f"{prefix}: workdir cleanup check failed; aborting "
+                f"benchmark: {type(cleanup_error).__name__}: "
+                f"{cleanup_error}",
+                file=sys.stderr,
+                flush=True,
+            )
+            break
+
+        if run_error is not None:
             failed += 1
             print(
-                f"{prefix}: failed: {type(error).__name__}: {error}",
+                f"{prefix}: failed: "
+                f"{type(run_error).__name__}: {run_error}",
                 file=sys.stderr,
                 flush=True,
             )
             if fail_fast:
                 break
+            continue
+
+        succeeded += 1
+        print(f"{prefix}: success; workdir cleanup verified")
 
     return succeeded, failed, skipped
 

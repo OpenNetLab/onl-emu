@@ -90,7 +90,10 @@ selected case count without starting an experiment. Filters are available
 through `--media`, `--datasets`, and `--categories`.
 
 Cases cannot run concurrently because they share the loopback `tc`
-configuration. The runner requires `sudo` and should run on an isolated
+configuration. After each attempted case, the runner waits five seconds and
+verifies that the temporary workdir is unmounted and empty or removed. It
+aborts the benchmark if cleanup is incomplete rather than risk contaminating
+later cases. The runner requires `sudo` and should run on an isolated
 evaluation host.
 
 To run one case directly:
@@ -113,12 +116,11 @@ in [`data/README.md`](data/README.md).
 
 ## Calculate QoE
 
-After a successful run, calculate its reference score from `telemetry.json`.
-The calculator reads `run.json` from the same result directory:
+After a successful run, calculate its reference score from the emulator output
+directory containing `telemetry.json` and `run.json`:
 
 ```bash
-python3 benchmark/calculate_qoe.py \
-  results/gemini-example/telemetry.json
+python3 benchmark/calculate_qoe.py results/gemini-example
 ```
 
 The score is the equally weighted mean of three normalized components:
