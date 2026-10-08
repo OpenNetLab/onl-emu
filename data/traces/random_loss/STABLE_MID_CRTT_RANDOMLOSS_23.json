@@ -1,0 +1,289 @@
+{
+    "from": "abr_trace/training_trace/fcc_train/trace_799448_http---www.facebook.com",
+    "type": "video",
+    "downlink": {},
+    "uplink": {
+        "trace_pattern": [
+            {
+                "duration": 5000.0,
+                "capacity": 1291,
+                "loss": 6,
+                "time": 0.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 166,
+                "loss": 5,
+                "time": 5.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1117,
+                "loss": 9,
+                "time": 10.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1231,
+                "loss": 5,
+                "time": 15.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1154,
+                "loss": 8,
+                "time": 20.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1107,
+                "loss": 8,
+                "time": 25.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1037,
+                "loss": 5,
+                "time": 30.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1069,
+                "loss": 8,
+                "time": 35.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1133,
+                "loss": 1,
+                "time": 40.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1114,
+                "loss": 8,
+                "time": 45.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1114,
+                "loss": 5,
+                "time": 50.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1119,
+                "loss": 6,
+                "time": 55.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1057,
+                "loss": 7,
+                "time": 60.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1098,
+                "loss": 2,
+                "time": 65.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 536,
+                "loss": 3,
+                "time": 70.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1089,
+                "loss": 6,
+                "time": 75.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1290,
+                "loss": 1,
+                "time": 80.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1066,
+                "loss": 8,
+                "time": 85.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1066,
+                "loss": 1,
+                "time": 90.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1153,
+                "loss": 5,
+                "time": 95.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 788,
+                "loss": 2,
+                "time": 100.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1061,
+                "loss": 3,
+                "time": 105.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1070,
+                "loss": 1,
+                "time": 110.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1070,
+                "loss": 4,
+                "time": 115.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1073,
+                "loss": 6,
+                "time": 120.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1064,
+                "loss": 8,
+                "time": 125.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1046,
+                "loss": 3,
+                "time": 130.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1044,
+                "loss": 7,
+                "time": 135.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1065,
+                "loss": 1,
+                "time": 140.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1065,
+                "loss": 9,
+                "time": 145.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1275,
+                "loss": 4,
+                "time": 150.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1292,
+                "loss": 4,
+                "time": 155.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1101,
+                "loss": 8,
+                "time": 160.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 952,
+                "loss": 9,
+                "time": 165.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1312,
+                "loss": 4,
+                "time": 170.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1290,
+                "loss": 4,
+                "time": 175.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1271,
+                "loss": 8,
+                "time": 180.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1287,
+                "loss": 3,
+                "time": 185.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1291,
+                "loss": 8,
+                "time": 190.0,
+                "rtt": 26
+            },
+            {
+                "duration": 5000.0,
+                "capacity": 1290,
+                "loss": 1,
+                "time": 195.0,
+                "rtt": 26
+            }
+        ]
+    }
+}
