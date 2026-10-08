@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+
+import os
+import signal
+import subprocess
+import sys
+import traceback
+import cmdinfer
+
+
+EXECUTABLE = os.path.join(
+    os.path.dirname(__file__), "..", "exe", "peerconnection_serverless_pyinfer"
+)
+
+
+def main():
+    app = subprocess.Popen(
+        [EXECUTABLE, *sys.argv[1:]],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        bufsize=0,
+    )
+
+    def terminate_child(_signum, _frame):
+        if app.poll() is None:
+            app.terminate()
+
+    signal.signal(signal.SIGTERM, terminate_child)
+    signal.signal(signal.SIGINT, terminate_child)
+
+    try:
+        cmdinfer.main(app.stdout, app.stdin, " ".join(sys.argv[1:]))
+    except Exception:
+        traceback.print_exc()
+        if app.poll() is None:
+            app.terminate()
+    finally:
+        if app.stdin:
+            app.stdin.close()
+        if app.stdout:
+            app.stdout.close()
+
+    return app.wait()
+
+
+if __name__ == "__main__":
+    sys.exit(main())
