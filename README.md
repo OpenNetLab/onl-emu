@@ -18,6 +18,7 @@ media-trace cases for each evaluated estimator.
 | [`data/`](data/) | Media URL catalog and full network-trace source pool |
 | [`benchmark/`](benchmark/) | Fixed media and trace benchmark suite |
 | [`emulator_call/`](emulator_call/) | End-to-end local experiment runner |
+| [`examples/`](examples/) | Comparable GCC, Gemini, and HRCC example outputs |
 | `results/` | Local experiment output; ignored by Git |
 
 ## Model Provenance and Adaptation
@@ -69,6 +70,20 @@ git lfs pull
 
 Only load model artifacts from trusted sources. PyTorch checkpoints can use
 Python object deserialization.
+
+## Example Results
+
+[`examples/`](examples/) contains one archived 60-second run for GCC, Gemini,
+and HRCC using the same media and network trace. Each directory includes the
+raw logs, telemetry, run metadata, and calculated QoE. To run the same example
+locally without overwriting the archived outputs:
+
+```bash
+./examples/run_examples.sh
+```
+
+See [`examples/README.md`](examples/README.md) for the fixed inputs, recorded
+scores, output layout, and model-specific invocation.
 
 ## Run the Benchmark
 
