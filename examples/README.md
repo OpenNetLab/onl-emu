@@ -18,11 +18,21 @@ Each result directory contains the emulator logs, telemetry, and a derived
 `run.json` are rewritten as repository-relative paths after the run so the
 archived examples remain portable.
 
-| Model | QoE |
-| --- | ---: |
-| GCC | 81.644 |
-| Gemini | 52.657 |
-| HRCC | 59.032 |
+The QoE score and its normalized components are:
+
+| Model | QoE (0-100) | Bitrate score | Jitter score | Freeze score |
+| --- | ---: | ---: | ---: | ---: |
+| GCC | 81.644 | 0.645 | 0.820 | 0.985 |
+| Gemini | 52.657 | 0.146 | 0.453 | 0.981 |
+| HRCC | 59.032 | 0.258 | 0.513 | 1.000 |
+
+The receiver telemetry underlying those scores is:
+
+| Model | Received bitrate (Kbit/s) | Jitter-buffer delay (ms) | Freeze duration (ms) | Frames decoded | Dropped frames | Render FPS |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| GCC | 1306 | 27 | 916 | 3536 | 6 | 59 |
+| Gemini | 295 | 82 | 1153 | 2417 | 5 | 40 |
+| HRCC | 522 | 73 | 0 | 3170 | 4 | 53 |
 
 ## Run the Example
 
