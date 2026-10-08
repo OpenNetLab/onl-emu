@@ -1,0 +1,11 @@
+{
+  "MediaBitrateReceivedInKbps": 295,
+  "TotalFreezeDurationMs": 1153,
+  "InterframeDelayInMs": 24,
+  "JitterBufferDelayInMs": 82,
+  "AVSyncOffsetInMs": 69,
+  "FramesDecoded": 2417,
+  "DroppedFrames": 5,
+  "RenderFramesPerSecond": 40,
+  "DecodedVp8Qp": 90
+}

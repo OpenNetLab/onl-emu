@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "trace": "../../benchmark/traces/fcc_wried/251_HIGH_STABLE.json",
+  "media": "../../benchmark/media/Gameplay.mp4",
+  "duration_seconds": 60,
+  "feedback_step_ms": 200,
+  "model": "gcc",
+  "workdir": "workdir",
+  "output_dir": "examples/gcc",
+  "started_at": "2026-10-08T15:15:02.561256+00:00",
+  "call": {
+    "sender_exit_code": 0,
+    "receiver_exit_code": 0,
+    "started_at": "2026-10-08T15:15:12.435221+00:00",
+    "finished_at": "2026-10-08T15:16:12.556810+00:00",
+    "duration_seconds": 60.122
+  },
+  "finished_at": "2026-10-08T15:16:13.604798+00:00"
+}
