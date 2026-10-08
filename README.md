@@ -1,7 +1,8 @@
 # ONL Emulator Evaluation
 
-A trace-driven evaluation workflow for comparing real-time communication
-bandwidth-estimation (BWE) algorithms with AlphaRTC.
+An AlphaRTC-based emulator and reproducible benchmark for evaluating
+real-time communication bandwidth-estimation (BWE) algorithms under controlled
+media and network conditions.
 
 The fixed benchmark combines five RTC media workloads with 120 network traces
 in 18 network classes. This produces 600 cases per estimator and 1,800 cases
