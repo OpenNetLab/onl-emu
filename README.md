@@ -1,58 +1,19 @@
 # ONL Emulator Evaluation
 
-This repository contains a trace-driven evaluation workflow for real-time
-communication bandwidth-estimation algorithms. It combines a prebuilt
-AlphaRTC runtime, adapted Gemini and HRCC estimators, network traces, benchmark
-media, and a local experiment runner.
+An AlphaRTC-based emulator and reproducible benchmark for evaluating
+real-time communication bandwidth-estimation (BWE) algorithms under controlled
+media and network conditions.
 
-The fixed evaluation matrix contains five representative RTC media workloads
-and 120 network traces in 18 dataset/category classes, producing 600
-media-trace cases for each evaluated estimator.
+The fixed benchmark combines five RTC media workloads with 120 network traces
+in 18 network classes. This produces 600 cases per estimator and 1,800 cases
+for the included GCC, Gemini, and HRCC estimators.
 
-## Repository Layout
+## Quick Start
 
-| Path | Contents |
-| --- | --- |
-| [`alphartc/`](alphartc/) | Prebuilt AlphaRTC runtime and Python inference adapter |
-| [`models/`](models/) | Vendored and adapted Gemini and HRCC estimators |
-| [`data/`](data/) | Media URL catalog and full network-trace source pool |
-| [`benchmark/`](benchmark/) | Fixed media and trace benchmark suite |
-| [`emulator_call/`](emulator_call/) | End-to-end local experiment runner |
-| `results/` | Local experiment output; ignored by Git |
+### 1. Prepare the environment
 
-## Model Provenance and Adaptation
+The evaluation runs on 64-bit Linux and requires:
 
-The code under [`models/`](models/) is maintained directly in this repository
-rather than as Git submodules. It is based on OpenNetLab's
-[AlphaRTC challenge example](https://github.com/OpenNetLab/Challenge-Example)
-and related Gemini and HRCC estimator implementations, then adapted for this
-evaluation workflow.
-
-The local changes primarily integrate both estimators with the same AlphaRTC
-Python inference contract:
-
-- each model directory exposes `BandwidthEstimator.py`;
-- the module exports an `Estimator` class;
-- `report_states(stats)` receives per-packet metadata;
-- `get_estimated_bandwidth()` returns a target bitrate in bits per second;
-- model paths are resolved relative to the checked-in model directory; and
-- [`emulator_call/`](emulator_call/) selects the implementation through
-  `--model gemini` or `--model hrcc`.
-
-The default model artifacts are:
-
-| Model | Default artifact |
-| --- | --- |
-| Gemini | `models/Gemini/model/ppo_2021_07_20_09_15_37.pth` |
-| HRCC | `models/HRCC/ppo_2021_07_25_04_57_11_with500trace.pth` |
-
-These implementations require PyTorch and NumPy. The checked-in artifacts were
-verified with Python 3.8.10, PyTorch 2.4.1, and NumPy 1.24.4. These versions
-describe the verified environment and are not strict dependency pins.
-
-## Requirements
-
-- 64-bit Linux
 - Python 3.8 or newer
 - PyTorch and NumPy for Gemini and HRCC
 - FFmpeg and FFprobe
@@ -60,43 +21,32 @@ describe the verified environment and are not strict dependency pins.
 - `mount`, `mountpoint`, `umount`, and `sudo`
 - Git LFS
 
-Install Git LFS and retrieve binary, media, and model assets:
+Retrieve the prebuilt runtime, model weights, media, and example logs:
 
 ```bash
 git lfs install
 git lfs pull
 ```
 
-Only load model artifacts from trusted sources. PyTorch checkpoints can use
-Python object deserialization.
+The runner changes the loopback `tc` configuration and mounts a temporary
+tmpfs. Run it on an isolated evaluation host where `sudo` is available.
 
-## Run the Benchmark
+### 2. Inspect or rerun the example
 
-Run commands from the repository root:
+[`examples/`](examples/) contains comparable 60-second GCC, Gemini, and HRCC
+runs with raw logs, telemetry, and QoE scores.
+
+Run the same case locally:
 
 ```bash
-python3 run_benchmark.py \
-  --models gcc gemini hrcc \
-  --duration 60 \
-  --workdir workdir \
-  --results-dir results \
-  --resume
+./examples/run_examples.sh
 ```
 
-The benchmark runner discovers the fixed media and traces, executes cases
-sequentially, and stores results under
-`results/<model>/<media>/<dataset>/<trace>/`. Use `--dry-run` to verify the
-selected case count without starting an experiment. Filters are available
-through `--media`, `--datasets`, and `--categories`.
+New output is written to `results/example-runs/`; the archived reference
+results are not overwritten. See [`examples/README.md`](examples/README.md)
+for the fixed inputs and recorded scores.
 
-Cases cannot run concurrently because they share the loopback `tc`
-configuration. After each attempted case, the runner waits five seconds and
-verifies that the temporary workdir is unmounted and empty or removed. It
-aborts the benchmark if cleanup is incomplete rather than risk contaminating
-later cases. The runner requires `sudo` and should run on an isolated
-evaluation host.
-
-To run one case directly:
+### 3. Run one case
 
 ```bash
 python3 -m emulator_call \
@@ -108,19 +58,54 @@ python3 -m emulator_call \
   --model gcc
 ```
 
-See [`emulator_call/README.md`](emulator_call/README.md) for detailed runtime,
-privilege, input, and output documentation. See
-[`alphartc/README.md`](alphartc/README.md) for the prebuilt runtime and custom
-estimator interface. Dataset provenance and field definitions are documented
-in [`data/README.md`](data/README.md).
+The supported model names are `gcc`, `gemini`, and `hrcc`.
 
-## Calculate QoE
+## Run the Full Benchmark
 
-After a successful run, calculate its reference score from the emulator output
-directory containing `telemetry.json` and `run.json`:
+Run all 600 cases for each selected model:
 
 ```bash
-python3 benchmark/calculate_qoe.py results/gemini-example
+python3 run_benchmark.py \
+  --models gcc gemini hrcc \
+  --duration 60 \
+  --workdir workdir \
+  --results-dir results \
+  --resume
+```
+
+Results are stored under:
+
+```text
+results/<model>/<media>/<dataset>/<trace>/
+```
+
+Useful options:
+
+- `--dry-run`: print the selected case count without running
+- `--resume`: skip cases whose `run.json` status is `success`
+- `--fail-fast`: stop after the first failed case
+- `--media`: select media workloads
+- `--datasets`: select trace datasets
+- `--categories`: select network classes
+
+Cases run sequentially because they share the loopback `tc` configuration.
+After every attempted case, the runner waits five seconds and verifies that
+the workdir is unmounted and empty or removed. Incomplete cleanup aborts the
+benchmark rather than contaminating later cases.
+
+## Results and QoE
+
+Each successful output directory contains:
+
+- `run.json`: inputs, model, timestamps, status, and process result
+- `telemetry.json`: extracted receiver metrics
+- `receiver.log` and `sender.log`: AlphaRTC metrics
+- `receiver_process.log` and `sender_process.log`: process output
+
+Calculate the reference QoE for one result:
+
+```bash
+python3 benchmark/calculate_qoe.py results/gcc-example
 ```
 
 The score is the equally weighted mean of three normalized components:
@@ -132,25 +117,64 @@ freeze  = max(0, 1 - freeze duration / call duration)
 QoE     = 100 * (bitrate + jitter + freeze) / 3
 ```
 
-Mean trace capacity is weighted by segment duration. The calculator reports
-the total QoE and all three components as JSON.
+Mean trace capacity is weighted by segment duration. For benchmark reporting:
 
-## Aggregate Benchmark Results
-
-To prevent unequal class sizes from changing class weights:
-
-1. calculate QoE for each individual run;
+1. calculate QoE for each run;
 2. average media and trace results within each of the 18 network classes; and
 3. report the macro-average across the 18 class means.
 
-Use the same 600-case set, call duration, and aggregation procedure for every
-estimator being compared. The trace distribution is documented in
-[`benchmark/traces/README.md`](benchmark/traces/README.md), and the media
-characteristics and attribution are documented in
-[`benchmark/media/README.md`](benchmark/media/README.md).
+Use the same case set, call duration, and aggregation procedure for every
+estimator being compared.
 
-## License and Upstream Code
+## Repository Contents
 
-The repository is distributed under the [BSD 3-Clause License](LICENSE).
-Vendored or adapted upstream components and datasets remain subject to their
-respective attribution, license, and usage terms.
+| Path | Contents |
+| --- | --- |
+| [`alphartc/`](alphartc/) | Prebuilt AlphaRTC runtime and Python inference adapter |
+| [`models/`](models/) | Adapted Gemini and HRCC estimators and model artifacts |
+| [`data/`](data/) | Media URL catalog and full network-trace source pool |
+| [`benchmark/`](benchmark/) | Fixed media suite, 120 traces, and QoE calculator |
+| [`emulator_call/`](emulator_call/) | Single-case preparation and execution engine |
+| [`examples/`](examples/) | Archived GCC, Gemini, and HRCC example outputs |
+| [`run_benchmark.py`](run_benchmark.py) | Sequential fixed-benchmark runner |
+
+## Models and Data
+
+The code under [`models/`](models/) is maintained directly in this repository.
+It is based on OpenNetLab's
+[AlphaRTC challenge example](https://github.com/OpenNetLab/Challenge-Example)
+and related Gemini and HRCC implementations, then adapted to a common Python
+inference interface:
+
+- `report_states(stats)` receives per-packet metadata;
+- `get_estimated_bandwidth()` returns the target bitrate in bits per second;
+- model artifacts are resolved relative to each model directory; and
+- the runner selects an estimator with `--model`.
+
+The checked-in model artifacts were verified with Python 3.8.10, PyTorch
+2.4.1, and NumPy 1.24.4. These are verification versions, not strict pins.
+Only load PyTorch model artifacts from trusted sources.
+
+The source pool contains FCC wired, Norway 3G, mmWave 5G, and derived
+random-loss traces. The fixed benchmark selects 120 traces from the three
+public network datasets and pairs them with five representative media files.
+
+## Detailed Documentation
+
+- [`examples/README.md`](examples/README.md): archived example inputs, scores,
+  and rerun instructions
+- [`emulator_call/README.md`](emulator_call/README.md): runtime behavior,
+  privileges, inputs, and outputs
+- [`alphartc/README.md`](alphartc/README.md): prebuilt runtime and custom
+  estimator interface
+- [`data/README.md`](data/README.md): dataset provenance and trace fields
+- [`benchmark/traces/README.md`](benchmark/traces/README.md): fixed trace
+  distribution and aggregation
+- [`benchmark/media/README.md`](benchmark/media/README.md): media
+  characteristics and attribution
+
+## License
+
+This repository is distributed under the [BSD 3-Clause License](LICENSE).
+Vendored or adapted upstream components, model artifacts, media, and datasets
+remain subject to their respective attribution, license, and usage terms.
