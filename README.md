@@ -137,7 +137,6 @@ estimator being compared.
 | [`emulator_call/`](emulator_call/) | Single-case preparation and execution engine |
 | [`examples/`](examples/) | Archived GCC, Gemini, and HRCC example outputs |
 | [`run_benchmark.py`](run_benchmark.py) | Sequential fixed-benchmark runner |
-| `results/` | Local experiment output; ignored by Git |
 
 ## Models and Data
 
