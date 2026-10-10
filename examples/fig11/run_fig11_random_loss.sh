@@ -7,7 +7,7 @@ set -u
 project_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)"
 output_root="${OUTPUT_ROOT:-$project_root/results/example-runs/fig11-random-loss}"
 workdir="$project_root/workdir"
-media="$project_root/benchmark/media/Screen-sharing.mp4"
+media="$project_root/benchmark/media/Talking-head.mp4"
 real_trace="$project_root/data/traces/random_loss/real/20210515_1730_REAL_NODE.json"
 synthetic_trace="$project_root/data/traces/random_loss/synthetic/STABLE_HIGH_CRTT_RANDOMLOSS_00.json"
 duration=60
