@@ -1,0 +1,709 @@
+{
+    "from": {
+        "capacity_log": "20210516_163423_147.46.242.42_192.168.122.21_8888_52480_25.log",
+        "loss_delay_log": "20210516_163022_147.46.242.42_192.168.122.21_8888_42996_1.log",
+        "timestamp_unit": "us",
+        "monitor_interval_ms": 1000,
+        "initial_one_way_delay_ms": 20.0,
+        "minimum_capacity_kbps": 1
+    },
+    "type": "video",
+    "downlink": {},
+    "uplink": {
+        "trace_pattern": [
+            {
+                "duration": 1000,
+                "capacity": 16834,
+                "loss": 3.370787,
+                "time": 0.0,
+                "rtt": 40.0
+            },
+            {
+                "duration": 1000,
+                "capacity": 17058,
+                "loss": 2.247191,
+                "time": 1.0,
+                "rtt": 41.950685
+            },
+            {
+                "duration": 1000,
+                "capacity": 23386,
+                "loss": 2.173913,
+                "time": 2.0,
+                "rtt": 22.855114
+            },
+            {
+                "duration": 1000,
+                "capacity": 22232,
+                "loss": 5.747126,
+                "time": 3.0,
+                "rtt": 21.897046
+            },
+            {
+                "duration": 1000,
+                "capacity": 11346,
+                "loss": 8.888889,
+                "time": 4.0,
+                "rtt": 42.000802
+            },
+            {
+                "duration": 1000,
+                "capacity": 21616,
+                "loss": 6.741573,
+                "time": 5.0,
+                "rtt": 22.941076
+            },
+            {
+                "duration": 1000,
+                "capacity": 23834,
+                "loss": 2.272727,
+                "time": 6.0,
+                "rtt": 32.663302
+            },
+            {
+                "duration": 1000,
+                "capacity": 24181,
+                "loss": 3.370787,
+                "time": 7.0,
+                "rtt": 50.405395
+            },
+            {
+                "duration": 1000,
+                "capacity": 8008,
+                "loss": 6.521739,
+                "time": 8.0,
+                "rtt": 33.208302
+            },
+            {
+                "duration": 1000,
+                "capacity": 23374,
+                "loss": 5.747126,
+                "time": 9.0,
+                "rtt": 42.9559
+            },
+            {
+                "duration": 1000,
+                "capacity": 24002,
+                "loss": 3.333333,
+                "time": 10.0,
+                "rtt": 49.357397
+            },
+            {
+                "duration": 1000,
+                "capacity": 23027,
+                "loss": 2.247191,
+                "time": 11.0,
+                "rtt": 37.931673
+            },
+            {
+                "duration": 1000,
+                "capacity": 7336,
+                "loss": 1.098901,
+                "time": 12.0,
+                "rtt": 37.084825
+            },
+            {
+                "duration": 1000,
+                "capacity": 24438,
+                "loss": 4.545455,
+                "time": 13.0,
+                "rtt": 29.295011
+            },
+            {
+                "duration": 1000,
+                "capacity": 23542,
+                "loss": 5.555556,
+                "time": 14.0,
+                "rtt": 37.381393
+            },
+            {
+                "duration": 1000,
+                "capacity": 18704,
+                "loss": 10.227273,
+                "time": 15.0,
+                "rtt": 47.116596
+            },
+            {
+                "duration": 1000,
+                "capacity": 14078,
+                "loss": 6.666667,
+                "time": 16.0,
+                "rtt": 34.820201
+            },
+            {
+                "duration": 1000,
+                "capacity": 23352,
+                "loss": 2.222222,
+                "time": 17.0,
+                "rtt": 31.041149
+            },
+            {
+                "duration": 1000,
+                "capacity": 23094,
+                "loss": 3.409091,
+                "time": 18.0,
+                "rtt": 35.262923
+            },
+            {
+                "duration": 1000,
+                "capacity": 13496,
+                "loss": 2.247191,
+                "time": 19.0,
+                "rtt": 55.923052
+            },
+            {
+                "duration": 1000,
+                "capacity": 20698,
+                "loss": 1.111111,
+                "time": 20.0,
+                "rtt": 42.633221
+            },
+            {
+                "duration": 1000,
+                "capacity": 23610,
+                "loss": 5.555556,
+                "time": 21.0,
+                "rtt": 29.940664
+            },
+            {
+                "duration": 1000,
+                "capacity": 24718,
+                "loss": 4.444444,
+                "time": 22.0,
+                "rtt": 19.42993
+            },
+            {
+                "duration": 1000,
+                "capacity": 9509,
+                "loss": 3.409091,
+                "time": 23.0,
+                "rtt": 13.660546
+            },
+            {
+                "duration": 1000,
+                "capacity": 23106,
+                "loss": 5.617978,
+                "time": 24.0,
+                "rtt": 21.375939
+            },
+            {
+                "duration": 1000,
+                "capacity": 24360,
+                "loss": 8.888889,
+                "time": 25.0,
+                "rtt": 34.137339
+            },
+            {
+                "duration": 1000,
+                "capacity": 22042,
+                "loss": 3.370787,
+                "time": 26.0,
+                "rtt": 27.231651
+            },
+            {
+                "duration": 1000,
+                "capacity": 12712,
+                "loss": 4.494382,
+                "time": 27.0,
+                "rtt": 32.002264
+            },
+            {
+                "duration": 1000,
+                "capacity": 24338,
+                "loss": 3.370787,
+                "time": 28.0,
+                "rtt": 37.067349
+            },
+            {
+                "duration": 1000,
+                "capacity": 24192,
+                "loss": 3.333333,
+                "time": 29.0,
+                "rtt": 32.916455
+            },
+            {
+                "duration": 1000,
+                "capacity": 12779,
+                "loss": 5.681818,
+                "time": 30.0,
+                "rtt": 40.231775
+            },
+            {
+                "duration": 1000,
+                "capacity": 21190,
+                "loss": 4.395604,
+                "time": 31.0,
+                "rtt": 38.205029
+            },
+            {
+                "duration": 1000,
+                "capacity": 23867,
+                "loss": 2.197802,
+                "time": 32.0,
+                "rtt": 22.609109
+            },
+            {
+                "duration": 1000,
+                "capacity": 23699,
+                "loss": 4.651163,
+                "time": 33.0,
+                "rtt": 14.764534
+            },
+            {
+                "duration": 1000,
+                "capacity": 10853,
+                "loss": 8.888889,
+                "time": 34.0,
+                "rtt": 30.120265
+            },
+            {
+                "duration": 1000,
+                "capacity": 23789,
+                "loss": 2.247191,
+                "time": 35.0,
+                "rtt": 42.598708
+            },
+            {
+                "duration": 1000,
+                "capacity": 23386,
+                "loss": 3.333333,
+                "time": 36.0,
+                "rtt": 20.815604
+            },
+            {
+                "duration": 1000,
+                "capacity": 21258,
+                "loss": 3.370787,
+                "time": 37.0,
+                "rtt": 28.677023
+            },
+            {
+                "duration": 1000,
+                "capacity": 14638,
+                "loss": 6.741573,
+                "time": 38.0,
+                "rtt": 37.696329
+            },
+            {
+                "duration": 1000,
+                "capacity": 23710,
+                "loss": 7.954545,
+                "time": 39.0,
+                "rtt": 47.773583
+            },
+            {
+                "duration": 1000,
+                "capacity": 24349,
+                "loss": 6.593407,
+                "time": 40.0,
+                "rtt": 43.800923
+            },
+            {
+                "duration": 1000,
+                "capacity": 11323,
+                "loss": 1.123596,
+                "time": 41.0,
+                "rtt": 33.110535
+            },
+            {
+                "duration": 1000,
+                "capacity": 22142,
+                "loss": 4.494382,
+                "time": 42.0,
+                "rtt": 47.45904
+            },
+            {
+                "duration": 1000,
+                "capacity": 24024,
+                "loss": 6.741573,
+                "time": 43.0,
+                "rtt": 45.110329
+            },
+            {
+                "duration": 1000,
+                "capacity": 23565,
+                "loss": 1.111111,
+                "time": 44.0,
+                "rtt": 21.118322
+            },
+            {
+                "duration": 1000,
+                "capacity": 12040,
+                "loss": 1.136364,
+                "time": 45.0,
+                "rtt": 40.065719
+            },
+            {
+                "duration": 1000,
+                "capacity": 24192,
+                "loss": 5.555556,
+                "time": 46.0,
+                "rtt": 49.932335
+            },
+            {
+                "duration": 1000,
+                "capacity": 23453,
+                "loss": 3.296703,
+                "time": 47.0,
+                "rtt": 39.104808
+            },
+            {
+                "duration": 1000,
+                "capacity": 18626,
+                "loss": 2.247191,
+                "time": 48.0,
+                "rtt": 15.264754
+            },
+            {
+                "duration": 1000,
+                "capacity": 14224,
+                "loss": 7.865169,
+                "time": 49.0,
+                "rtt": 38.245485
+            },
+            {
+                "duration": 1000,
+                "capacity": 24237,
+                "loss": 3.370787,
+                "time": 50.0,
+                "rtt": 22.422349
+            },
+            {
+                "duration": 1000,
+                "capacity": 22971,
+                "loss": 1.123596,
+                "time": 51.0,
+                "rtt": 30.684035
+            },
+            {
+                "duration": 1000,
+                "capacity": 12589,
+                "loss": 2.222222,
+                "time": 52.0,
+                "rtt": 19.898058
+            },
+            {
+                "duration": 1000,
+                "capacity": 20272,
+                "loss": 4.444444,
+                "time": 53.0,
+                "rtt": 13.298628
+            },
+            {
+                "duration": 1000,
+                "capacity": 24181,
+                "loss": 2.272727,
+                "time": 54.0,
+                "rtt": 32.328209
+            },
+            {
+                "duration": 1000,
+                "capacity": 24517,
+                "loss": 5.681818,
+                "time": 55.0,
+                "rtt": 48.79845
+            },
+            {
+                "duration": 1000,
+                "capacity": 10360,
+                "loss": 3.296703,
+                "time": 56.0,
+                "rtt": 36.266831
+            },
+            {
+                "duration": 1000,
+                "capacity": 22546,
+                "loss": 1.123596,
+                "time": 57.0,
+                "rtt": 37.227695
+            },
+            {
+                "duration": 1000,
+                "capacity": 25290,
+                "loss": 5.617978,
+                "time": 58.0,
+                "rtt": 38.682177
+            },
+            {
+                "duration": 1000,
+                "capacity": 20877,
+                "loss": 2.247191,
+                "time": 59.0,
+                "rtt": 37.115512
+            },
+            {
+                "duration": 1000,
+                "capacity": 12678,
+                "loss": 4.494382,
+                "time": 60.0,
+                "rtt": 40.146664
+            },
+            {
+                "duration": 1000,
+                "capacity": 24114,
+                "loss": 6.741573,
+                "time": 61.0,
+                "rtt": 36.628763
+            },
+            {
+                "duration": 1000,
+                "capacity": 23733,
+                "loss": 1.111111,
+                "time": 62.0,
+                "rtt": 42.658255
+            },
+            {
+                "duration": 1000,
+                "capacity": 13496,
+                "loss": 3.370787,
+                "time": 63.0,
+                "rtt": 38.067209
+            },
+            {
+                "duration": 1000,
+                "capacity": 21414,
+                "loss": 6.666667,
+                "time": 64.0,
+                "rtt": 33.106963
+            },
+            {
+                "duration": 1000,
+                "capacity": 23621,
+                "loss": 3.409091,
+                "time": 65.0,
+                "rtt": 42.865346
+            },
+            {
+                "duration": 1000,
+                "capacity": 23106,
+                "loss": 3.333333,
+                "time": 66.0,
+                "rtt": 41.734386
+            },
+            {
+                "duration": 1000,
+                "capacity": 7078,
+                "loss": 4.444444,
+                "time": 67.0,
+                "rtt": 36.158372
+            },
+            {
+                "duration": 1000,
+                "capacity": 24382,
+                "loss": 5.555556,
+                "time": 68.0,
+                "rtt": 2.707911
+            },
+            {
+                "duration": 1000,
+                "capacity": 23565,
+                "loss": 1.136364,
+                "time": 69.0,
+                "rtt": 15.272616
+            },
+            {
+                "duration": 1000,
+                "capacity": 24405,
+                "loss": 7.777778,
+                "time": 70.0,
+                "rtt": 28.038498
+            },
+            {
+                "duration": 1000,
+                "capacity": 9419,
+                "loss": 5.617978,
+                "time": 71.0,
+                "rtt": 26.944249
+            },
+            {
+                "duration": 1000,
+                "capacity": 23699,
+                "loss": 2.247191,
+                "time": 72.0,
+                "rtt": 36.83011
+            },
+            {
+                "duration": 1000,
+                "capacity": 24539,
+                "loss": 4.494382,
+                "time": 73.0,
+                "rtt": 34.112429
+            },
+            {
+                "duration": 1000,
+                "capacity": 16834,
+                "loss": 1.111111,
+                "time": 74.0,
+                "rtt": 33.801154
+            },
+            {
+                "duration": 1000,
+                "capacity": 14762,
+                "loss": 0.0,
+                "time": 75.0,
+                "rtt": 39.257176
+            },
+            {
+                "duration": 1000,
+                "capacity": 24942,
+                "loss": 4.494382,
+                "time": 76.0,
+                "rtt": 29.400076
+            },
+            {
+                "duration": 1000,
+                "capacity": 23128,
+                "loss": 5.555556,
+                "time": 77.0,
+                "rtt": 24.147746
+            },
+            {
+                "duration": 1000,
+                "capacity": 11189,
+                "loss": 3.370787,
+                "time": 78.0,
+                "rtt": 14.67914
+            },
+            {
+                "duration": 1000,
+                "capacity": 24170,
+                "loss": 6.741573,
+                "time": 79.0,
+                "rtt": 41.562426
+            },
+            {
+                "duration": 1000,
+                "capacity": 23778,
+                "loss": 5.555556,
+                "time": 80.0,
+                "rtt": 28.636146
+            },
+            {
+                "duration": 1000,
+                "capacity": 23666,
+                "loss": 4.597701,
+                "time": 81.0,
+                "rtt": 48.161968
+            },
+            {
+                "duration": 1000,
+                "capacity": 9206,
+                "loss": 7.608696,
+                "time": 82.0,
+                "rtt": 15.68384
+            },
+            {
+                "duration": 1000,
+                "capacity": 23654,
+                "loss": 5.617978,
+                "time": 83.0,
+                "rtt": 19.984177
+            },
+            {
+                "duration": 1000,
+                "capacity": 23128,
+                "loss": 6.741573,
+                "time": 84.0,
+                "rtt": 19.490642
+            },
+            {
+                "duration": 1000,
+                "capacity": 20440,
+                "loss": 3.370787,
+                "time": 85.0,
+                "rtt": 28.978279
+            },
+            {
+                "duration": 1000,
+                "capacity": 14784,
+                "loss": 2.247191,
+                "time": 86.0,
+                "rtt": 26.61611
+            },
+            {
+                "duration": 1000,
+                "capacity": 23509,
+                "loss": 2.247191,
+                "time": 87.0,
+                "rtt": 32.309926
+            },
+            {
+                "duration": 1000,
+                "capacity": 24360,
+                "loss": 4.444444,
+                "time": 88.0,
+                "rtt": 38.43614
+            },
+            {
+                "duration": 1000,
+                "capacity": 11368,
+                "loss": 2.247191,
+                "time": 89.0,
+                "rtt": 39.061121
+            },
+            {
+                "duration": 1000,
+                "capacity": 20866,
+                "loss": 2.247191,
+                "time": 90.0,
+                "rtt": 30.114777
+            },
+            {
+                "duration": 1000,
+                "capacity": 23968,
+                "loss": 5.617978,
+                "time": 91.0,
+                "rtt": 36.339058
+            },
+            {
+                "duration": 1000,
+                "capacity": 24170,
+                "loss": 2.197802,
+                "time": 92.0,
+                "rtt": 24.63239
+            },
+            {
+                "duration": 1000,
+                "capacity": 8882,
+                "loss": 1.136364,
+                "time": 93.0,
+                "rtt": 20.95211
+            },
+            {
+                "duration": 1000,
+                "capacity": 24158,
+                "loss": 7.954545,
+                "time": 94.0,
+                "rtt": 41.308052
+            },
+            {
+                "duration": 1000,
+                "capacity": 23262,
+                "loss": 2.197802,
+                "time": 95.0,
+                "rtt": 40.880637
+            },
+            {
+                "duration": 1000,
+                "capacity": 22736,
+                "loss": 4.494382,
+                "time": 96.0,
+                "rtt": 25.708923
+            },
+            {
+                "duration": 1000,
+                "capacity": 12533,
+                "loss": 6.741573,
+                "time": 97.0,
+                "rtt": 37.454329
+            },
+            {
+                "duration": 1000,
+                "capacity": 23419,
+                "loss": 1.098901,
+                "time": 98.0,
+                "rtt": 18.041447
+            }
+        ]
+    }
+}

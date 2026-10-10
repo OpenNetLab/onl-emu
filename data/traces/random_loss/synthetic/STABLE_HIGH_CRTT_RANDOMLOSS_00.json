@@ -6,119 +6,119 @@
         "trace_pattern": [
             {
                 "duration": 5000.0,
-                "capacity": 2008,
+                "capacity": 2000,
                 "loss": 6,
                 "time": 0.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2056,
+                "capacity": 2000,
                 "loss": 3,
                 "time": 5.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2060,
+                "capacity": 2000,
                 "loss": 3,
                 "time": 10.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2012,
+                "capacity": 2000,
                 "loss": 7,
                 "time": 15.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 1973,
+                "capacity": 2000,
                 "loss": 7,
                 "time": 20.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2015,
+                "capacity": 2000,
                 "loss": 9,
                 "time": 25.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2102,
+                "capacity": 2000,
                 "loss": 8,
                 "time": 30.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2001,
+                "capacity": 2000,
                 "loss": 2,
                 "time": 35.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 1966,
+                "capacity": 2000,
                 "loss": 9,
                 "time": 40.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2022,
+                "capacity": 2000,
                 "loss": 8,
                 "time": 45.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2101,
+                "capacity": 2000,
                 "loss": 9,
                 "time": 50.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2108,
+                "capacity": 2000,
                 "loss": 2,
                 "time": 55.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2084,
+                "capacity": 2000,
                 "loss": 6,
                 "time": 60.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 1859,
+                "capacity": 2000,
                 "loss": 8,
                 "time": 65.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 1821,
+                "capacity": 2000,
                 "loss": 2,
                 "time": 70.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2033,
+                "capacity": 2000,
                 "loss": 6,
                 "time": 75.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 1997,
+                "capacity": 2000,
                 "loss": 6,
                 "time": 80.0,
                 "rtt": 16
@@ -132,154 +132,154 @@
             },
             {
                 "duration": 5000.0,
-                "capacity": 2051,
+                "capacity": 2000,
                 "loss": 7,
                 "time": 90.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 1735,
+                "capacity": 2000,
                 "loss": 2,
                 "time": 95.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2102,
+                "capacity": 2000,
                 "loss": 2,
                 "time": 100.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2024,
+                "capacity": 2000,
                 "loss": 3,
                 "time": 105.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2053,
+                "capacity": 2000,
                 "loss": 7,
                 "time": 110.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2084,
+                "capacity": 2000,
                 "loss": 3,
                 "time": 115.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2086,
+                "capacity": 2000,
                 "loss": 1,
                 "time": 120.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 1977,
+                "capacity": 2000,
                 "loss": 9,
                 "time": 125.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2094,
+                "capacity": 2000,
                 "loss": 5,
                 "time": 130.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2099,
+                "capacity": 2000,
                 "loss": 9,
                 "time": 135.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2034,
+                "capacity": 2000,
                 "loss": 1,
                 "time": 140.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2027,
+                "capacity": 2000,
                 "loss": 6,
                 "time": 145.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2080,
+                "capacity": 2000,
                 "loss": 1,
                 "time": 150.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2026,
+                "capacity": 2000,
                 "loss": 4,
                 "time": 155.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2099,
+                "capacity": 2000,
                 "loss": 4,
                 "time": 160.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2055,
+                "capacity": 2000,
                 "loss": 6,
                 "time": 165.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2083,
+                "capacity": 2000,
                 "loss": 5,
                 "time": 170.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2091,
+                "capacity": 2000,
                 "loss": 1,
                 "time": 175.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 1977,
+                "capacity": 2000,
                 "loss": 3,
                 "time": 180.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2009,
+                "capacity": 2000,
                 "loss": 7,
                 "time": 185.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 2053,
+                "capacity": 2000,
                 "loss": 4,
                 "time": 190.0,
                 "rtt": 16
             },
             {
                 "duration": 5000.0,
-                "capacity": 1988,
+                "capacity": 2000,
                 "loss": 6,
                 "time": 195.0,
                 "rtt": 16
