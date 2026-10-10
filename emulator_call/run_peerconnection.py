@@ -19,7 +19,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_ALPHARTC_DIR = PROJECT_ROOT / "alphartc"
 DEFAULT_WORKDIR = PROJECT_ROOT / "workdir"
 DEFAULT_TC_SETUP = PROJECT_ROOT / "emulator_call" / "tc_setup.py"
-SUPPORTED_MODELS = ("gcc", "gemini", "hrcc")
+SUPPORTED_MODELS = ("default", "gcc", "gemini", "hrcc")
 ESTIMATOR_DIRS = {
     "gemini": PROJECT_ROOT / "models" / "Gemini",
     "hrcc": PROJECT_ROOT / "models" / "HRCC",
@@ -335,6 +335,8 @@ class PeerConnectionSession:
             environment["ALPHARTC_ESTIMATOR_DIR"] = str(
                 self.estimator_dir
             )
+        else:
+            environment.pop("ALPHARTC_ESTIMATOR_DIR", None)
         return environment
 
     def _peer_executable(self) -> Path:

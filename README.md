@@ -33,18 +33,19 @@ tmpfs. Run it on an isolated evaluation host where `sudo` is available.
 
 ### 2. Inspect or rerun the example
 
-[`examples/`](examples/) contains comparable 60-second GCC, Gemini, and HRCC
-runs with raw logs, telemetry, and QoE scores.
+[`examples/smoke/`](examples/smoke/) contains comparable 60-second GCC,
+Gemini, and HRCC runs with raw logs, telemetry, and QoE scores.
 
 Run the same case locally:
 
 ```bash
-./examples/run_examples.sh
+./examples/smoke/run_examples.sh
 ```
 
-New output is written to `results/example-runs/`; the archived reference
-results are not overwritten. See [`examples/README.md`](examples/README.md)
-for the fixed inputs and recorded scores.
+New output is written to `results/example-runs/smoke/`; the archived reference
+results are not overwritten. See
+[`examples/smoke/README.md`](examples/smoke/README.md) for the fixed inputs and
+recorded scores.
 
 ### 3. Run one case
 
@@ -58,7 +59,50 @@ python3 -m emulator_call \
   --model gcc
 ```
 
-The supported model names are `gcc`, `gemini`, and `hrcc`.
+The supported model names are `default`, `gcc`, `gemini`, and `hrcc`.
+Omitting `--model` selects `default`, the AlphaRTC Python estimator that
+returns a fixed 2 Mbit/s bandwidth estimate. An unsupported model name prints
+an error and exits without starting a call.
+
+## Reproduce Section 4.5/Fig. 11
+
+The three 60-second Screen-sharing cases use:
+
+| Panel | Estimator | Trace and network condition |
+| --- | --- | --- |
+| (a) | Default fixed 2 Mbit/s BWE | `data/traces/random_loss/real/20210515_1730_REAL_NODE.json`; effectively unconstrained capacity with random loss |
+| (b) | GCC | `data/traces/random_loss/synthetic/STABLE_HIGH_CRTT_RANDOMLOSS_00.json`; fixed 2 Mbit/s capacity with random loss |
+| (c) | Gemini | `data/traces/random_loss/synthetic/STABLE_HIGH_CRTT_RANDOMLOSS_00.json`; fixed 2 Mbit/s capacity with random loss |
+
+Run all three cases:
+
+```bash
+./examples/fig11/run_fig11_random_loss.sh
+```
+
+Set `DRY_RUN=1` to print the exact emulator commands without running them:
+
+```bash
+DRY_RUN=1 ./examples/fig11/run_fig11_random_loss.sh
+```
+
+For example, panel (a) runs:
+
+```bash
+python3 -m emulator_call \
+  --trace data/traces/random_loss/real/20210515_1730_REAL_NODE.json \
+  --media benchmark/media/Screen-sharing.mp4 \
+  --duration 60 \
+  --output-dir results/example-runs/fig11-random-loss/a \
+  --workdir workdir
+```
+
+The corresponding archived logs, telemetry, metadata, and plots are under
+[`examples/fig11/a/`](examples/fig11/a/),
+[`examples/fig11/b/`](examples/fig11/b/), and
+[`examples/fig11/c/`](examples/fig11/c/). See
+[`examples/fig11/README.md`](examples/fig11/README.md) for details and
+[`data/README.md`](data/README.md) for random-loss trace provenance.
 
 ## Run the Full Benchmark
 
@@ -161,8 +205,10 @@ public network datasets and pairs them with five representative media files.
 
 ## Detailed Documentation
 
-- [`examples/README.md`](examples/README.md): archived example inputs, scores,
-  and rerun instructions
+- [`examples/smoke/README.md`](examples/smoke/README.md): archived smoke-test
+  inputs, scores, and rerun instructions
+- [`examples/fig11/README.md`](examples/fig11/README.md): archived Fig. 11
+  inputs, results, and rerun instructions
 - [`emulator_call/README.md`](emulator_call/README.md): runtime behavior,
   privileges, inputs, and outputs
 - [`alphartc/README.md`](alphartc/README.md): prebuilt runtime and custom

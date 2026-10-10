@@ -31,14 +31,18 @@ Licenses and availability on external platforms may change. Before downloading, 
 | [`fcc_wried/`](traces/fcc_wried/) | [FCC Measuring Broadband America](https://www.fcc.gov/reports-research/reports/measuring-broadband-america) [2] | Fixed-broadband throughput and RTT measurements. The directory name is retained for compatibility despite the `wried` typo. |
 | [`norway_3g/`](traces/norway_3g/) | [Norway 3G/HSDPA commute-path traces](http://skuld.cs.umass.edu/traces/mmsys/2013/pathbandwidth/) [3] | Mobile bandwidth measurements collected on public-transport and driving routes in Norway. |
 | [`mmwave_5g/`](traces/mmwave_5g/) | [Commercial 5G mmWave uplink dataset](https://github.com/NUWiNS/sigcomm-5gmemu-5g-mmWave-uplink-data) [4] | Uplink throughput and latency measurements under static, walking, and driving scenarios on 5G and LTE networks in the United States. |
-| [`random_loss/`](traces/random_loss/) | Our real-node testbed | Processed measurements used to represent non-congestion random-loss conditions. This is derived project data, not a fourth independent public dataset. |
+| [`random_loss/`](traces/random_loss/) | OpenNetLab measurements and synthetic traces | Real and synthetic traces used to represent non-congestion random-loss conditions. |
 
 Each normalized trace describes time-varying **duration**, **capacity**, **one-way delay**, and **packet loss**. Because the public datasets expose different subsets of these fields, the missing values are completed as described in the paper:
 
 - **FCC:** one-way delay is half of the reported RTT; loss is set to zero for the fixed-broadband traces.
 - **Norway 3G:** capacity comes from the published bandwidth logs; delay is set to a constant representative HSDPA delay, and loss is assigned from matching cellular measurements on our real-node testbed.
 - **5G mmWave:** capacity and the provided delay time series are retained; loss is assigned from matching 5G measurements on our real-node testbed.
-- **Random loss:** traces are derived from real-node measurements and processed to isolate random-loss behavior.
+- **Random loss:** We reorganized `data/traces/random_loss/` to clarify the provenance of the released traces. It now contains:
+  - `real/`: 32 traces derived from real-node measurements of capacity, loss, and delay.
+  - `synthetic/`: 120 traces generated to cover a broader range of controlled network conditions. They combine FCC-derived capacity/RTT baselines with synthetic random-loss patterns.
+
+  The FCC mappings apply only to `synthetic/`.
 
 Each entry in `uplink.trace_pattern` uses the following units:
 

@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "trace": "../../../data/traces/random_loss/real/20210515_1730_REAL_NODE.json",
+  "media": "../../../benchmark/media/Screen-sharing.mp4",
+  "duration_seconds": 60,
+  "feedback_step_ms": 200,
+  "model": "default",
+  "workdir": "workdir",
+  "output_dir": "examples/fig11/a",
+  "started_at": "2026-10-10T14:15:33.892006+00:00",
+  "call": {
+    "sender_exit_code": 0,
+    "receiver_exit_code": 0,
+    "started_at": "2026-10-10T14:15:37.806006+00:00",
+    "finished_at": "2026-10-10T14:16:37.987265+00:00",
+    "duration_seconds": 60.181
+  },
+  "finished_at": "2026-10-10T14:16:41.552889+00:00"
+}

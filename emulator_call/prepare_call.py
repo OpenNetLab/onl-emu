@@ -15,7 +15,7 @@ from typing import Any, Dict, Optional, Sequence
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_WORKDIR = PROJECT_ROOT / "workdir"
-SUPPORTED_MODELS = ("gcc", "gemini", "hrcc")
+SUPPORTED_MODELS = ("default", "gcc", "gemini", "hrcc")
 
 
 @dataclass(frozen=True)

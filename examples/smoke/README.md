@@ -1,4 +1,4 @@
-# Example Run Results
+# Smoke Example Outputs
 
 This directory contains one comparable 60-second run for each supported
 bandwidth estimator:
@@ -39,15 +39,15 @@ The receiver telemetry underlying those scores is:
 Run from any directory:
 
 ```bash
-./examples/run_examples.sh
+./examples/smoke/run_examples.sh
 ```
 
-New results are written to the ignored `results/example-runs/` directory, so
-the archived reference outputs under `examples/` remain unchanged. Set
-`OUTPUT_ROOT` to use a different output location:
+New results are written to the ignored `results/example-runs/smoke/`
+directory, so the archived reference outputs under `examples/smoke/` remain
+unchanged. Set `OUTPUT_ROOT` to use a different output location:
 
 ```bash
-OUTPUT_ROOT=/tmp/onl-examples ./examples/run_examples.sh
+OUTPUT_ROOT=/tmp/onl-examples ./examples/smoke/run_examples.sh
 ```
 
 The script refuses to overwrite non-empty result directories. It runs the
@@ -56,7 +56,7 @@ After each case, it waits five seconds and verifies that the temporary workdir
 is unmounted and empty or removed. Pass model names to run only a subset:
 
 ```bash
-./examples/run_examples.sh hrcc
+./examples/smoke/run_examples.sh hrcc
 ```
 
 The run requires the same Linux, Git LFS, FFmpeg, `tc`, tmpfs, and `sudo`
@@ -65,7 +65,7 @@ dependencies documented in the repository root README.
 ## Recalculate QoE
 
 ```bash
-python3 benchmark/calculate_qoe.py examples/gcc
-python3 benchmark/calculate_qoe.py examples/gemini
-python3 benchmark/calculate_qoe.py examples/hrcc
+python3 benchmark/calculate_qoe.py examples/smoke/gcc
+python3 benchmark/calculate_qoe.py examples/smoke/gemini
+python3 benchmark/calculate_qoe.py examples/smoke/hrcc
 ```

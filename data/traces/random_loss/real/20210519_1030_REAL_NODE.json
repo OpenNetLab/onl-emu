@@ -1,0 +1,709 @@
+{
+    "from": {
+        "capacity_log": "20210519_103424_147.46.242.42_192.168.122.21_8888_52282_25.log",
+        "loss_delay_log": "20210519_103001_147.46.242.42_192.168.122.21_8888_46071_1.log",
+        "timestamp_unit": "us",
+        "monitor_interval_ms": 1000,
+        "initial_one_way_delay_ms": 20.0,
+        "minimum_capacity_kbps": 1
+    },
+    "type": "video",
+    "downlink": {},
+    "uplink": {
+        "trace_pattern": [
+            {
+                "duration": 1000,
+                "capacity": 23934,
+                "loss": 11.570248,
+                "time": 0.0,
+                "rtt": 40.0
+            },
+            {
+                "duration": 1000,
+                "capacity": 24438,
+                "loss": 14.444444,
+                "time": 1.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 9016,
+                "loss": 15.730337,
+                "time": 2.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24371,
+                "loss": 19.101124,
+                "time": 3.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24293,
+                "loss": 8.988764,
+                "time": 4.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 17987,
+                "loss": 8.988764,
+                "time": 5.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 16643,
+                "loss": 17.777778,
+                "time": 6.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24416,
+                "loss": 12.359551,
+                "time": 7.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24192,
+                "loss": 14.606742,
+                "time": 8.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 10461,
+                "loss": 11.363636,
+                "time": 9.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 23766,
+                "loss": 21.111111,
+                "time": 10.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24752,
+                "loss": 10.0,
+                "time": 11.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 23811,
+                "loss": 13.483146,
+                "time": 12.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 11312,
+                "loss": 5.617978,
+                "time": 13.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24394,
+                "loss": 15.555556,
+                "time": 14.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24461,
+                "loss": 12.359551,
+                "time": 15.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 13854,
+                "loss": 8.988764,
+                "time": 16.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 20026,
+                "loss": 17.977528,
+                "time": 17.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24394,
+                "loss": 12.222222,
+                "time": 18.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24606,
+                "loss": 13.483146,
+                "time": 19.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 4995,
+                "loss": 10.11236,
+                "time": 20.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 28269,
+                "loss": 10.0,
+                "time": 21.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24517,
+                "loss": 11.235955,
+                "time": 22.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 21235,
+                "loss": 10.0,
+                "time": 23.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 13686,
+                "loss": 15.730337,
+                "time": 24.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24326,
+                "loss": 8.988764,
+                "time": 25.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24517,
+                "loss": 14.772727,
+                "time": 26.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 11491,
+                "loss": 13.186813,
+                "time": 27.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 22770,
+                "loss": 4.597701,
+                "time": 28.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 25054,
+                "loss": 9.89011,
+                "time": 29.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24002,
+                "loss": 11.235955,
+                "time": 30.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 10696,
+                "loss": 16.853933,
+                "time": 31.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24360,
+                "loss": 14.444444,
+                "time": 32.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24786,
+                "loss": 7.865169,
+                "time": 33.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 16374,
+                "loss": 12.5,
+                "time": 34.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 16755,
+                "loss": 9.89011,
+                "time": 35.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 19029,
+                "loss": 22.47191,
+                "time": 36.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 22098,
+                "loss": 13.483146,
+                "time": 37.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 20104,
+                "loss": 7.865169,
+                "time": 38.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24528,
+                "loss": 13.333333,
+                "time": 39.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24427,
+                "loss": 6.741573,
+                "time": 40.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 21101,
+                "loss": 11.235955,
+                "time": 41.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 12320,
+                "loss": 9.090909,
+                "time": 42.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24528,
+                "loss": 12.087912,
+                "time": 43.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24920,
+                "loss": 25.0,
+                "time": 44.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 12253,
+                "loss": 18.888889,
+                "time": 45.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 20754,
+                "loss": 15.384615,
+                "time": 46.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24528,
+                "loss": 17.045455,
+                "time": 47.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24226,
+                "loss": 14.606742,
+                "time": 48.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 8030,
+                "loss": 14.444444,
+                "time": 49.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 26746,
+                "loss": 9.090909,
+                "time": 50.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24382,
+                "loss": 14.444444,
+                "time": 51.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 19376,
+                "loss": 14.606742,
+                "time": 52.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 15142,
+                "loss": 15.555556,
+                "time": 53.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24696,
+                "loss": 12.359551,
+                "time": 54.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24394,
+                "loss": 17.977528,
+                "time": 55.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 10450,
+                "loss": 15.730337,
+                "time": 56.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24797,
+                "loss": 7.865169,
+                "time": 57.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24125,
+                "loss": 15.555556,
+                "time": 58.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24438,
+                "loss": 13.483146,
+                "time": 59.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 11066,
+                "loss": 10.989011,
+                "time": 60.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24573,
+                "loss": 9.090909,
+                "time": 61.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24438,
+                "loss": 12.359551,
+                "time": 62.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 13944,
+                "loss": 12.359551,
+                "time": 63.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 20731,
+                "loss": 13.186813,
+                "time": 64.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24595,
+                "loss": 12.5,
+                "time": 65.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24002,
+                "loss": 15.555556,
+                "time": 66.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 10293,
+                "loss": 5.747126,
+                "time": 67.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24293,
+                "loss": 10.989011,
+                "time": 68.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 23867,
+                "loss": 7.865169,
+                "time": 69.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 20261,
+                "loss": 7.777778,
+                "time": 70.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 15949,
+                "loss": 10.11236,
+                "time": 71.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24595,
+                "loss": 15.730337,
+                "time": 72.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24606,
+                "loss": 10.11236,
+                "time": 73.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 9699,
+                "loss": 8.888889,
+                "time": 74.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24987,
+                "loss": 14.772727,
+                "time": 75.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24394,
+                "loss": 16.666667,
+                "time": 76.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 23811,
+                "loss": 12.5,
+                "time": 77.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 11054,
+                "loss": 15.384615,
+                "time": 78.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24573,
+                "loss": 10.227273,
+                "time": 79.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24237,
+                "loss": 11.111111,
+                "time": 80.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 14157,
+                "loss": 10.0,
+                "time": 81.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 21202,
+                "loss": 15.730337,
+                "time": 82.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24461,
+                "loss": 10.227273,
+                "time": 83.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24685,
+                "loss": 16.483516,
+                "time": 84.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 9946,
+                "loss": 14.606742,
+                "time": 85.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24461,
+                "loss": 11.235955,
+                "time": 86.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24774,
+                "loss": 11.111111,
+                "time": 87.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 18514,
+                "loss": 11.363636,
+                "time": 88.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 15882,
+                "loss": 16.483516,
+                "time": 89.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24651,
+                "loss": 6.666667,
+                "time": 90.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24685,
+                "loss": 9.090909,
+                "time": 91.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 8803,
+                "loss": 12.222222,
+                "time": 92.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 25099,
+                "loss": 10.227273,
+                "time": 93.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24405,
+                "loss": 13.483146,
+                "time": 94.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24517,
+                "loss": 11.111111,
+                "time": 95.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 9934,
+                "loss": 13.483146,
+                "time": 96.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24741,
+                "loss": 9.090909,
+                "time": 97.0,
+                "rtt": 0.002
+            },
+            {
+                "duration": 1000,
+                "capacity": 24091,
+                "loss": 13.333333,
+                "time": 98.0,
+                "rtt": 0.002
+            }
+        ]
+    }
+}

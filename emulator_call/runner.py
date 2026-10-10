@@ -22,6 +22,7 @@ from .workdir import Workdir
 
 FEEDBACK_STEP_MS = 200
 TMPFS_SIZE_GB = 24
+DEFAULT_MODEL = "default"
 OUTPUT_FILES = (
     "telemetry.json",
     "receiver.log",
@@ -185,8 +186,11 @@ def parse_args(
         "-m",
         "--model",
         choices=SUPPORTED_MODELS,
-        required=True,
-        help="bandwidth estimator model",
+        default=DEFAULT_MODEL,
+        help=(
+            "bandwidth estimator model "
+            f"(default: {DEFAULT_MODEL})"
+        ),
     )
     return parser.parse_args(argv)
 
