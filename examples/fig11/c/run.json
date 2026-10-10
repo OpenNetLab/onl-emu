@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "trace": "../../../data/traces/random_loss/synthetic/STABLE_HIGH_CRTT_RANDOMLOSS_00.json",
+  "media": "../../../benchmark/media/Screen-sharing.mp4",
+  "duration_seconds": 60,
+  "feedback_step_ms": 200,
+  "model": "gemini",
+  "workdir": "workdir",
+  "output_dir": "examples/fig11/c",
+  "started_at": "2026-10-10T14:17:57.255129+00:00",
+  "call": {
+    "sender_exit_code": 0,
+    "receiver_exit_code": 0,
+    "started_at": "2026-10-10T14:18:01.195293+00:00",
+    "finished_at": "2026-10-10T14:19:01.670857+00:00",
+    "duration_seconds": 60.476
+  },
+  "finished_at": "2026-10-10T14:19:05.738358+00:00"
+}

@@ -4,8 +4,8 @@
 
 set -u
 
-project_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
-output_root="${OUTPUT_ROOT:-$project_root/results/example-runs}"
+project_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)"
+output_root="${OUTPUT_ROOT:-$project_root/results/example-runs/smoke/}"
 workdir="$project_root/workdir"
 media="$project_root/benchmark/media/Gameplay.mp4"
 trace="$project_root/benchmark/traces/fcc_wried/251_HIGH_STABLE.json"
