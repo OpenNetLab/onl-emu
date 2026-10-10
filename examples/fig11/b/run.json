@@ -1,19 +1,19 @@
 {
   "status": "success",
   "trace": "../../../data/traces/random_loss/synthetic/STABLE_HIGH_CRTT_RANDOMLOSS_00.json",
-  "media": "../../../benchmark/media/Screen-sharing.mp4",
+  "media": "../../../benchmark/media/Talking-head.mp4",
   "duration_seconds": 60,
   "feedback_step_ms": 200,
   "model": "gcc",
   "workdir": "workdir",
   "output_dir": "examples/fig11/b",
-  "started_at": "2026-10-10T14:16:47.305510+00:00",
+  "started_at": "2026-10-10T15:46:00.261843+00:00",
   "call": {
     "sender_exit_code": 0,
     "receiver_exit_code": 0,
-    "started_at": "2026-10-10T14:16:50.935415+00:00",
-    "finished_at": "2026-10-10T14:17:51.060658+00:00",
-    "duration_seconds": 60.125
+    "started_at": "2026-10-10T15:46:03.882811+00:00",
+    "finished_at": "2026-10-10T15:47:04.021297+00:00",
+    "duration_seconds": 60.138
   },
-  "finished_at": "2026-10-10T14:17:51.511819+00:00"
+  "finished_at": "2026-10-10T15:47:04.479412+00:00"
 }
