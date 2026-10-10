@@ -1,6 +1,6 @@
 class Estimator(object):
     def __init__(self):
-        self.last_bwe = 300_000
+        self.last_bwe = 2_000_000
 
     def report_states(self, stats: dict):
             '''
